@@ -12,4 +12,4 @@ spring:
       ddl-auto: update
     show-sql: true
 
-    #access token : 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
+    #access token : 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
