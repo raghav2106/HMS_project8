@@ -24,12 +24,30 @@ $(document).ready(function () {
                     $("#specCodeError").css('color', 'red');
                     specCodeError = false;
                 }
-                else {
-                    $("#specCodeError").hide();
-                    specCodeError = true;
-                }
-                return specCodeError;
-            };
+                else{
+				$.ajax({
+					url:'checkCode',
+					data : {"code":val},
+					success : function(resTxt){
+						if(resTxt!= ''){
+							$('#specCodeError').show();
+							$("#specCodeError").html(resTxt);
+			                $("#specCodeError").css('color','red');
+			                specCodeError = false;  
+							}else{
+								$("#specCodeError").hide();
+								specCodeError = true;
+							}
+				}
+	
+	});
+	
+	}
+	return specCodeError;
+}
+                
+                
+           
 
             function validate_specName() {
                 var val = $("#specName").val();
