@@ -1,5 +1,16 @@
-server:
+
+ server:
   port: 9090
+  
+
+---
+master: 
+  user: 
+    email: raghavendrakanekal5@gmail.com
+    name: Admin
+    
+  
+
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -12,4 +23,16 @@ spring:
       ddl-auto: update
     show-sql: true
 
+
+
+  mail:  
+    host: smtp.gmail.com
+    port: 587
+    username: kraghava112@gmail.com
+    password: WelCome32!
+    properties:
+     mail:
+      smtp:
+       starttls:
+         enable: true
     #access token : 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
