@@ -11,7 +11,10 @@ import com.example.HMS.service.IUserService;
 import com.example.HMS.util.MyMailUtil;
 import com.example.HMS.util.UserUtil;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Component
+@Slf4j
 public class MasterAccountSetupRunner implements CommandLineRunner{
 
 	
@@ -41,6 +44,7 @@ public class MasterAccountSetupRunner implements CommandLineRunner{
 			user.setRole(UserRoles.ADMIN.name());
 			
 			Long genId  = userService.saveUser(user);
+			log.info(pwd);
 			if(genId!=null)
 				new Thread(new Runnable() {
 					public void run() {
